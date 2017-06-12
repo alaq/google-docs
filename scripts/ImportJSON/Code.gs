@@ -63,6 +63,14 @@ function ImportJSON(url, query, parseOptions) {
   return ImportJSONAdvanced(url, null, query, parseOptions, includeXPath_, defaultTransform_);
 }
 
+function ImportJSONMultiplePages(url, query, parseOptions, numberOfPages, increment) {
+  var multiplePages = ImportJSONAdvanced(url, null, query, parseOptions, includeXPath_, defaultTransform_);
+  for(var page = 1; page <= numberOfPages; page++){
+   multiplePages = multiplePages.concat(ImportJSONAdvanced(url + page*increment, null, query, parseOptions, includeXPath_, defaultTransform_));
+  }
+  return multiplePages;
+}
+
 /**
  * Imports a JSON feed via a POST request and returns the results to be inserted into a Google Spreadsheet. The JSON feed is 
  * flattened to create a two-dimensional array. The first row contains the headers, with each column header indicating the path to 
