@@ -109,6 +109,7 @@ function ImportJSONMultiplePages(url, query, parseOptions, numberOfPages, increm
  * @param {fetchOptions} a comma-separated list of options used to retrieve the JSON feed from the URL
  * @param {query}        a comma-separated list of paths to import. Any path starting with one of these paths gets imported.
  * @param {parseOptions} a comma-separated list of options that alter processing of the data
+ * @customfunction
  *
  * @return a two-dimensional array containing the data, with the first row containing headers
  **/
@@ -171,6 +172,7 @@ function ImportJSONViaPost(url, payload, fetchOptions, query, parseOptions) {
  * @param {transformFunc} a function with the signature func(data, row, column, options) where data is a 2-dimensional array of the data 
  *                        and row & column are the current row and column being processed. Any return value is ignored. Note that row 0 
  *                        contains the headers for the data, so test for row==0 to process headers only.
+ * @customfunction
  *
  * @return a two-dimensional array containing the data, with the first row containing headers
  **/
