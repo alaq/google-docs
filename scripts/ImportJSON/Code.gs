@@ -1,7 +1,7 @@
 /*====================================================================================================================================*
   ImportJSON by Trevor Lohrbeer (@FastFedora)
   ====================================================================================================================================
-  Version:      1.2.1
+  Version:      1.3.0
   Project Page: http://blog.fastfedora.com/projects/import-json
   Copyright:    (c) 2012-2013 by Trevor Lohrbeer
   License:      GNU General Public License, version 3 (GPL-3.0) 
@@ -10,6 +10,7 @@
   A library for importing JSON feeds into Google spreadsheets. Functions include:
 
      ImportJSON            For use by end users to import a JSON feed from a URL 
+     ImportJSONMultiplePages  For use by end users to import a JSON feed from a URL with multiple pages
      ImportJSONViaPost     For use by end users to import a JSON feed from a URL using POST parameters
      ImportJSONAdvanced    For use by script developers to easily extend the functionality of this library
 
@@ -22,6 +23,7 @@
   ------------------------------------------------------------------------------------------------------------------------------------
   Changelog:
   
+  1.3.0  Added ability to query paginated JSON feeds
   1.2.1  Fixed a bug with how nested arrays are handled. The rowIndex counter wasn't incrementing properly when parsing.
   1.2.0  Added ImportJSONViaPost and support for fetchOptions to ImportJSONAdvanced
   1.1.1  Added a version number using Google Scripts Versioning so other developers can use the library
